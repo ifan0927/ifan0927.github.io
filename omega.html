@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>圖片展示網頁</title>
+  <style>
+    #image {
+      max-width: 500px;
+      max-height: 500px;
+    }
+  </style>
+  <script>
+    var counter = 0;
+    var totalImages = 50;
+
+    function displayImage() {
+      var image = document.getElementById('image');
+      counter++;
+
+      if (counter > totalImages) {
+        counter = 1;
+      }
+
+      image.src = 'images/imgae (' + counter + ').jpg';
+
+      var counterElement = document.getElementById('counter');
+      counterElement.innerHTML = counter;
+    }
+  </script>
+</head>
+<body>
+  <h1>圖片展示網頁</h1>
+
+  <button onclick="displayImage()">顯示圖片</button>
+
+  <p>按鈕點擊次數：<span id="counter">0</span></p>
+
+  <img id="image" src="images/imgae (1).jpg">
+
+</body>
+</html>
